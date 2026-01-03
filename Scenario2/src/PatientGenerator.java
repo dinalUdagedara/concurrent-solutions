@@ -23,7 +23,7 @@ public class PatientGenerator implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("🏥 Patient Generator started - generating patients continuously...\n");
+        System.out.println("Patient Generator started - generating patients continuously...\n");
         
         while (running) {
             try {
@@ -36,26 +36,26 @@ public class PatientGenerator implements Runnable {
                 switch (speciality) {
                     case PAEDIATRICIAN:
                         paediatricianQueue.put(patient);
-                        System.out.println("➕ " + patient + " arrived and queued for Paediatrician");
+                        System.out.println(patient + " arrived and queued for Paediatrician");
                         break;
                     case SURGEON:
                         surgeonQueue.put(patient);
-                        System.out.println("➕ " + patient + " arrived and queued for Surgeon");
+                        System.out.println(patient + " arrived and queued for Surgeon");
                         break;
                     case CARDIOLOGIST:
                         cardiologistQueue.put(patient);
-                        System.out.println("➕ " + patient + " arrived and queued for Cardiologist");
+                        System.out.println(patient + " arrived and queued for Cardiologist");
                         break;
                 }
                 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                System.out.println("⚠️ Patient Generator interrupted");
+                System.out.println("Patient Generator interrupted");
                 break;
             }
         }
         
-        System.out.println("🛑 Patient Generator stopped");
+        System.out.println("Patient Generator stopped");
     }
 
     public void stop() {
