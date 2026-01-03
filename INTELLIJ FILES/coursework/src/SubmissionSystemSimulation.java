@@ -1,8 +1,8 @@
 public class SubmissionSystemSimulation {
     public static void main(String[] args) throws InterruptedException {
         int poolSize = Runtime.getRuntime().availableProcessors() * 2;
-        int numOfStudents = 250;
-        
+        int numOfStudents = 10000;
+
         System.out.println("========================================");
         System.out.println("  UNIVERSITY SUBMISSION SYSTEM");
         System.out.println("========================================\n");
@@ -11,13 +11,13 @@ public class SubmissionSystemSimulation {
         System.out.println("- Thread Pool Size: " + poolSize);
         System.out.println("- Number of Students: " + numOfStudents);
         System.out.println();
-        
-        NewSubmissionSystem newSubmissionSystem = 
+
+        NewSubmissionSystem newSubmissionSystem =
                 new NewSubmissionSystem(poolSize, numOfStudents);
-        
+
         newSubmissionSystem.processSubmission();
         newSubmissionSystem.shutdown();
-        
+
         System.out.println("\n========================================");
         System.out.println("  Simulation Complete");
         System.out.println("========================================");
